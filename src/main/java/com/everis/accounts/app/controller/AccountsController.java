@@ -24,7 +24,7 @@ public class AccountsController {
   @GetMapping
   @ApiOperation(value = "Cuentas de una tarjeta",response = AccountResponse.class)
   @ApiResponse(code = 200, message = "Success", response = AccountResponse.class) 
-  public Single<AccountResponse> getAccounResponseByCardNumber(@RequestParam(name = "cardNumber") String cardNumber) throws InterruptedException {
+  public Single<AccountResponse> getAllAccounts(@RequestParam(name = "cardNumber") String cardNumber) throws InterruptedException {
     return service.getAllAccounts(cardNumber);
   }
 }
