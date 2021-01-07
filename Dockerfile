@@ -8,5 +8,5 @@ FROM openjdk:8-jre-alpine
 RUN apk add --no-cache tzdata
 ENV TZ=America/Lima
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo$TZ >/etc/timezone
-COPY --from=builder /app/target/Accounts-1.jar  /
+COPY --from=builder /app/target/Accounts-1.jar /
 CMD ["java","-jar","Accounts-1.jar"]
